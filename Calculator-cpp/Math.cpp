@@ -6,18 +6,18 @@ double Math::Calculate(double value1, double value2, char operation)
     {
     case '+':
         return value1 + value2;
-        break;
 
     case '-':
         return value1 - value2;
-        break;
 
     case '*':
         return value1 * value2;
-        break;
 
     case '/':
-        return value1 / value2;
+        if (value2 != 0)
+        {
+            return value1 / value2;
+        }
         break;
 
     default:
