@@ -89,14 +89,22 @@ void UI::PrintResult()
     }
     else
     {
-        auto start = std::chrono::high_resolution_clock::now();
-        ans = calculator.Calculate(value1, value2, operator_);
-        auto now = std::chrono::high_resolution_clock::now();
+        double totalTime = 0;
 
-        std::chrono::duration<double> elapsed = now - start;
+        for (int i = 0; i < timesToCalculate; i++)
+        {
+            auto start = std::chrono::high_resolution_clock::now();
+            ans = calculator.Calculate(value1, value2, operator_);
+            auto now = std::chrono::high_resolution_clock::now();
 
+            std::chrono::duration<double> elapsed = now - start;
+
+            totalTime += elapsed.count();
+        }
+        
+        double averageTime = totalTime / timesToCalculate;
         std::cout << value1 << " " << operator_ << " " << value2 << " = " << ans << "\n";
-        std::cout << "\nOperation took: " << elapsed.count() << " seconds.";
+        std::cout << "\Performed operation " << timesToCalculate << " times. Average time: " << averageTime << " seconds (" << averageTime * 1000 << " milliseconds).";
     }
 
     std::cin.get();

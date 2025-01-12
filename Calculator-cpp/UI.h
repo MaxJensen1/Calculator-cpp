@@ -25,4 +25,5 @@ private:
 	double value1;
 	double value2;
 	double ans;
+	int timesToCalculate = 100;
 };
