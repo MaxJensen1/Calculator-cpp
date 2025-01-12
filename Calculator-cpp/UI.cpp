@@ -104,7 +104,7 @@ void UI::PrintResult()
         
         double averageTime = totalTime / timesToCalculate;
         std::cout << value1 << " " << operator_ << " " << value2 << " = " << ans << "\n";
-        std::cout << "\Performed operation " << timesToCalculate << " times. Average time: " << averageTime << " seconds (" << averageTime * 1000 << " milliseconds).";
+        std::cout << "\nPerformed operation " << timesToCalculate << " times. Average time: " << averageTime << " seconds (" << averageTime * 1000 << " milliseconds).";
     }
 
     std::cin.get();
